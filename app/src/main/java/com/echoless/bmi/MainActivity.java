@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.content.Intent;
 
 public class
 
@@ -68,6 +69,10 @@ MainActivity extends AppCompatActivity {
                     }
                 })
                 .show();
+
+        Intent intent = new Intent(this,ResultActivity.class);
+        intent.putExtra("BMI",bmi);
+        startActivity(intent);
 
         }
 }
