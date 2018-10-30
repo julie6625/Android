@@ -55,7 +55,7 @@ MainActivity extends AppCompatActivity {
         float height = Float.parseFloat(h);
         float bmi = weight / (height*height);
         Log.d("MainActivity" , bmi+"");     // msg必要加一個字串 " "
-        Toast.makeText(this, getString(R.string.your_bmi)+ bmi,
+/*        Toast.makeText(this, getString(R.string.your_bmi)+ bmi,
                 Toast.LENGTH_LONG).show(); // 顯示給使用者觀看bmi結果(氣球提示)
         new AlertDialog.Builder(this)
                 .setMessage(getString(R.string.your_bmi) + bmi)
@@ -69,7 +69,7 @@ MainActivity extends AppCompatActivity {
                     }
                 })
                 .show();
-
+*/
         Intent intent = new Intent(this,ResultActivity.class);
         intent.putExtra("BMI",bmi);
         startActivity(intent);
