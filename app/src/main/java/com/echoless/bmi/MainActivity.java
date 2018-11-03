@@ -23,15 +23,16 @@ MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        edweight = findViewById(R.id.Ed_weight);//定位ed_weight
-        edheight = findViewById(R.id.Ed_height);
-        //alt+shift+上下移動選取行
-        //ctrl+alt+f 直接宣告field
 
         findView(); //ctrl+alt+m Extract method 直接選取新增方法
     }
 
     private void findView() {
+        edweight = findViewById(R.id.Ed_weight);//定位ed_weight
+        edheight = findViewById(R.id.Ed_height);
+        //alt+shift+上下移動選取行
+        //ctrl+alt+f 直接宣告field
+
         Button help = findViewById(R.id.help); //為help按鈕新增功能
         help.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,12 +50,10 @@ MainActivity extends AppCompatActivity {
 
     public void bmi(View view){
         Log.d( "MainActivity" , "bmi" );    //撰寫log
-        String w = edweight.getText().toString();   //取得weight資料
-        String h = edheight.getText().toString();
-        Log.d("MainActivity" , w+"/ ("+h+"*"+h+")");
-        float weight = Float.parseFloat(w); //字串轉浮點
-        float height = Float.parseFloat(h);
+        float weight = Float.parseFloat(edweight.getText().toString()); //取得weight資料&字串轉浮點
+        float height = Float.parseFloat(edheight.getText().toString());
         float bmi = weight / (height*height);
+        Log.d("MainActivity" , edweight+"/ ("+edheight+"*"+edheight+")");
         Log.d("MainActivity" , bmi+"");     // msg必要加一個字串 " "
 /*        Toast.makeText(this, getString(R.string.your_bmi)+ bmi,
                 Toast.LENGTH_LONG).show(); // 顯示給使用者觀看bmi結果(氣球提示)
